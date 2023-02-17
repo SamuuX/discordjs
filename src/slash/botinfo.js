@@ -1,23 +1,25 @@
-const { EmbedBuilder } = require("discord.js");
+const { EmbedBuilder } = require('discord.js')
+const { version } = require(`${process.cwd()}/package.json`)
 
 module.exports = {
-  name: "botinfo",
-  description: "Get information about the bot.",
+  name: 'botinfo',
+  description: 'Get information about the bot.',
   run: async (interaction, client) => {
     return interaction.reply({
       embeds: [
         new EmbedBuilder()
-          .setTitle("Information")
+          .setTitle('Information')
           .setDescription(
-            `**Node.js Version:** ${process.version}\n**Ping:** ${client.ws.ping} ms\n**Guilds:** ${client.guilds.cache.size}\n**Users:** ${client.users.cache.size}`
+            `**Node.js Version:** ${process.version}\n**Ping:** ${client.ws.ping} ms\n**Guilds:** ${client.guilds.cache.size}\n**Users:** ${client.users.cache.size}\n**Bot Version:** ${version}`
           )
           .setFooter({
-            text: "Railway",
+            text: 'Railway',
             iconURL:
-              "https://avatars.githubusercontent.com/u/66716858?s=200&v=4",
+              'https://avatars.githubusercontent.com/u/66716858?s=200&v=4'
           })
-          .setTimestamp(),
+          .setTimestamp()
       ],
-    });
-  },
-};
+      ephemeral: true
+    })
+  }
+}

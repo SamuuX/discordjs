@@ -21,10 +21,13 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env.local
+.env
 .env.development.local
 .env.test.local
 .env.production.local
 
 # out dir
 dist/
+config.json
+pnpm-lock.yaml
+Template.js

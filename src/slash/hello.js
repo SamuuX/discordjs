@@ -1,7 +1,7 @@
 module.exports = {
-  name: "hello",
-  description: "Say Hello To me!",
+  name: 'ping',
+  description: 'Say ping Bot',
   run: async (interaction, client) => {
-    return interaction.reply({ content: "Choo choo! 🚅" });
-  },
-};
+    return interaction.reply({ content: `Pong \`${client.ws.ping}ms\` 🏓`, ephemeral: true })
+  }
+}
